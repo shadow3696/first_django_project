@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if title %}
-    <title>about_blog - {{ title }}</title>
+    <title>home_blog - {{ title }}</title>
     {% else %}
-    <title>about_blog</title>
+    <title>home_blog</title>
     {% endif %}
 </head>
 <body>
-    <h1>this is my blog</h1>
+    {% for post in posts %}
+    <h1>( {{ post.title }} )</h1>
+    <p><b>{{ post.author }} is {{ post.content }}</b>.</p>
+    <p><b>Time to put this post is <u><i>{{ post.date_post }}</i></u></b>.</p>
+    {% endfor %}
 </body>
 </html>
